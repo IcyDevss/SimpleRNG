@@ -1,2 +1,2 @@
-# SimpleRNG
-myrng
+#Simple RNG
+My RNG projects
