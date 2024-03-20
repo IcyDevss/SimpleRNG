@@ -1,0 +1,12 @@
+#auraContainer {
+    text-align: center;
+    margin-top: 50px; 
+}
+
+#button {
+    color: green;
+}
+
+#auraText {
+    font-size: 24px; /* Set the desired font size */
+}
