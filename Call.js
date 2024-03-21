@@ -156,7 +156,7 @@ function showAura() {
         var auraType = getRandomAura();
         document.getElementById("auraText").innerHTML = auraType;
         saveState(); // Save the state after selecting an aura
-    }, 500); // 1000 milliseconds = 1 second
+    }, 1000); // 1000 milliseconds = 1 second
 }
 
 // Call loadState() to load the saved state when the page loads
