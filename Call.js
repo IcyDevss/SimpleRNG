@@ -11,7 +11,66 @@ var dict = {
         "Chance": 2**3,
         "Owned": false,
     },
-    // Add more aura types as needed
+    "Rage": {
+        "Chance": 2**4,
+        "Owned": false,
+    },
+    "Crystal": {
+        "Chance": 2**5,
+        "Owned": false,
+    },
+    "Ruby": {
+        "Chance": 2**6,
+        "Owned": false,
+    },
+    "Glitch": {
+        "Chance": 2**7,
+        "Owned": false,
+    },
+    "Hero": {
+        "Chance": 2**8,
+        "Owned": false,
+    },
+    "Love": {
+        "Chance": 2**9,
+        "Owned": false,
+    },
+    "Precious": {
+        "Chance": 2**10,
+        "Owned": false,
+    },
+    "Crazy": {
+        "Chance": 2**11,
+        "Owned": false,
+    },
+    "_UNDERSCORE_": {
+        "Chance": 2**12,
+        "Owned": false,
+    },
+    "Undead": {
+        "Chance": 2**13,
+        "Owned": false,
+    },
+    "Mother": {
+        "Chance": 2**14,
+        "Owned": false,
+    },
+    "Undefined": {
+        "Chance": 2**15,
+        "Owned": false,
+    },
+    "Creepy...": {
+        "Chance": 2**16,
+        "Owned": false,
+    },
+    "Void": {
+        "Chance": 2**17,
+        "Owned": false,
+    },
+    "Star": {
+        "Chance": 2**18,
+        "Owned": false,
+    },
 };
 
 // Load the saved state from localStorage
