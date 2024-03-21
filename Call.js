@@ -33,7 +33,7 @@ var lastRollTime = 0; // Variable to store the timestamp of the last roll
 
 function getRandomAura() {
     var currentTime = Date.now();
-    if (currentTime - lastRollTime >= 1000) { // Check if it has been at least 1 second since the last roll
+    if (currentTime - lastRollTime >= 100) { // Check if it has been at least 1 second since the last roll
         lastRollTime = currentTime; // Update the last roll time
         
         // Perform the roll
