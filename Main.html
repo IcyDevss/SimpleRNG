@@ -8,10 +8,19 @@
     <script src="Call.js"></script>
 </head>
 <body>
-    <div id="auraContainer">
-        <h1 id="auraText">Wsg</h1>
-        <div id = "button">
-            <button onclick="GetAura()">Generate Aura</button>
+    <div id="Main">
+        <!-- Display the randomly selected aura here -->
+        <div id="auraText">
+            <h1 style="font-size: 24px;">:Rarity here:</h1>
+        </div>
+        <div id="Buttons">
+            <!-- Call the showRandomAura() function when the button is clicked -->
+            <button class="button" onclick="showAura()">Generate Aura</button>
+            <br><br>
+        </div>
+        <!-- Display the index of owned auras here -->
+        <div id="indexText">
+            <p></p>
         </div>
     </div>
 </body>
