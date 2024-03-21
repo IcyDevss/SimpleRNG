@@ -1,11 +1,23 @@
+body {
+    background-image: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?cs=srgb&dl=pexels-pixabay-36717.jpg&fm=jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Fixed background */
+
+}
+
+
+
 #Main {
     text-align: center;
     margin-top: 50px;
+    color: white;
 }
 
 .button {
     border: gray, 20px, solid;
     color: rgb(0, 0, 0);
+    height: 40px;
     border-radius: 25px;
     text-align: center;
     text-decoration: none;
