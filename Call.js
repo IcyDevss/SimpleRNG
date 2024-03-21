@@ -77,10 +77,18 @@ var dict = {
 function loadState() {
     var savedState = localStorage.getItem('auraState');
     if (savedState) {
-        dict = JSON.parse(savedState);
+        var savedDict = JSON.parse(savedState);
+        // Check if each aura in the dictionary exists in the saved state
+        for (var key in dict) {
+            if (!savedDict.hasOwnProperty(key)) {
+                savedDict[key] = dict[key]; // Add the missing aura to the saved state
+            }
+        }
+        dict = savedDict; // Update the dictionary
         showIndex(); // Update the index display after loading
     }
 }
+
 
 // Save the current state to localStorage
 function saveState() {
