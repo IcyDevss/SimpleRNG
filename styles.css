@@ -1,12 +1,15 @@
-#auraContainer {
+#Main {
     text-align: center;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
-#button {
-    color: green;
+.button {
+    border: gray, 20px, solid;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
-#auraText {
-    font-size: 24px; /* Set the desired font size */
-}
