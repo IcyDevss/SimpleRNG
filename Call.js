@@ -71,6 +71,10 @@ var dict = {
         "Chance": 2**18,
         "Owned": false,
     },
+    "Omega": {
+        "Chance": 2**19,
+        "Owned": false,
+    },
 };
 
 // Load the saved state from localStorage
