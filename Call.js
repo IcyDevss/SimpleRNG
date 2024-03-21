@@ -89,6 +89,7 @@ function saveState() {
 }
 
 function getRandomAura() {
+    console.log("Rolled!");
     var a = Math.floor(Math.random() * 1000000) + 1;
     var selectedKey = "";
     var totalChance = 0;
