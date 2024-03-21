@@ -145,10 +145,18 @@ function showIndex() {
     document.getElementById("indexText").innerHTML = Index;
 }
 
+var debounceTimeout; // Variable to store the timeout ID
+
 function showAura() {
-    var auraType = getRandomAura();
-    document.getElementById("auraText").innerHTML = auraType;
-    saveState(); // Save the state after selecting an aura
+    // Clear any previous timeout
+    clearTimeout(debounceTimeout);
+    
+    // Set a new timeout to execute the showAura function after 1 second (adjust the delay as needed)
+    debounceTimeout = setTimeout(function() {
+        var auraType = getRandomAura();
+        document.getElementById("auraText").innerHTML = auraType;
+        saveState(); // Save the state after selecting an aura
+    }, 100); // 1000 milliseconds = 1 second
 }
 
 // Call loadState() to load the saved state when the page loads
