@@ -6,11 +6,15 @@ body {
 
 }
 
+#Secret {
+    background-color: black;
+    border: rgb(0, 0, 0), 0px, solid;
+}
 
 
 #Main {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
     color: white;
 }
 
