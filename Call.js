@@ -125,7 +125,7 @@ function toggleAutoRoll() {
 }
 
 function startAutoRoll() {
-    autoRollIntervalId = setInterval(showAura, 100); // Call showAura every 1000 milliseconds (1 second)
+    autoRollIntervalId = setInterval(showAura, 500); // Call showAura every 1000 milliseconds (1 second)
 }
 
 function stopAutoRoll() {
