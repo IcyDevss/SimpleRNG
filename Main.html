@@ -8,21 +8,19 @@
     <script src="Call.js"></script>
 </head>
 <body>
+    <button id="Secret" onclick="Secret()"></button>
     <div id="Main">
-        <!-- Display the randomly selected aura here -->
         <div id="auraText">
             <h1 style="font-size: 24px;">:Rarity here:</h1>
         </div>
         <div id="Buttons">
-            <!-- Call the showRandomAura() function when the button is clicked -->
             <button class="button" onclick="showAura()">Generate Aura</button>
             <br><br>
+            <button class="button" onclick="toggleAutoRoll()">Auto Roll</button>
+            <br><br>
         </div>
-        <!-- Display the index of owned auras here -->
         <div id="indexText">
-            <p>
-                <!--Hello! -->
-            </p>
+            <p><b></b></p>
         </div>
     </div>
 </body>
