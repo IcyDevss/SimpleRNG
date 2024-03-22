@@ -1,4 +1,9 @@
+//var's, let's, const's
 var dict = {
+    //"Secret": {
+        //"Chance": 0,
+        //"Owned": false,
+    //},
     "Common": {
         "Chance": 2,
         "Owned": false,
@@ -75,56 +80,78 @@ var dict = {
         "Chance": 2**19,
         "Owned": false,
     },
+    "SunScourage": {
+        "Chance": 2**19,
+        "Owned": false,
+    },
 };
+var lastRollTime = 0;
+var autoRollIntervalId;
+//End var's, let's, const's
 
-// Load the saved state from localStorage
+//Saving & Loading Data
 function loadState() {
     var savedState = localStorage.getItem('auraState');
     if (savedState) {
         var savedDict = JSON.parse(savedState);
-        // Check if each aura in the dictionary exists in the saved state
         for (var key in dict) {
             if (!savedDict.hasOwnProperty(key)) {
-                savedDict[key] = dict[key]; // Add the missing aura to the saved state
+                savedDict[key] = dict[key];
             }
         }
-        dict = savedDict; // Update the dictionary
-        showIndex(); // Update the index display after loading
+        dict = savedDict;
+        showIndex();
     }
 }
 
-
-// Save the current state to localStorage
 function saveState() {
     var currentState = JSON.stringify(dict);
     localStorage.setItem('auraState', currentState);
 }
+//End Saving & Loading Data
 
-var lastRollTime = 0; // Variable to store the timestamp of the last roll
+//Functions
+
+function Secret() {
+    document.getElementById("auraText").innerHTML = '<h1 style="font-size: 24px;">' +"Secret 1/1T"+  '</h1>';
+}
+
+function toggleAutoRoll() {
+    if (autoRollIntervalId) {
+        stopAutoRoll();
+    } else {
+        startAutoRoll();
+    }
+}
+
+function startAutoRoll() {
+    autoRollIntervalId = setInterval(showAura, 100); // Call showAura every 1000 milliseconds (1 second)
+}
+
+function stopAutoRoll() {
+    clearInterval(autoRollIntervalId);
+    autoRollIntervalId = null;
+}
 
 function getRandomAura() {
     var currentTime = Date.now();
-    if (currentTime - lastRollTime >= 100) { // Check if it has been at least 1 second since the last roll
-        lastRollTime = currentTime; // Update the last roll time
-        
-        // Perform the roll
+    if (currentTime - lastRollTime >= 100) {
+
         var a = Math.floor(Math.random() * 1000000) + 1;
         var selectedKey = "";
         var totalChance = 0;
 
-        // Calculate the total chance for all aura types
         for (var key in dict) {
             if (dict.hasOwnProperty(key)) {
                 totalChance += dict[key]["Chance"];
             }
         }
 
-        // Determine the selected aura based on probability
         var cumulativeProbability = 0;
+
         for (var key in dict) {
             if (dict.hasOwnProperty(key)) {
                 var chance = dict[key]["Chance"];
-                // Adjust the probability inversely with rarity
                 var adjustedChance = totalChance / chance;
                 cumulativeProbability += adjustedChance / totalChance * 1000000;
                 if (a <= cumulativeProbability) {
@@ -138,7 +165,6 @@ function getRandomAura() {
             }
         }
 
-        // Return the selected aura
         return '<h1 style="font-size: 24px;">' + selectedKey + ' 1/' + dict[selectedKey]["Chance"] + '</h1>';
     }
 }
@@ -166,13 +192,14 @@ function showIndex() {
 
 function showAura() {
     var auraType = getRandomAura();
-    if (auraType) { // Check if a roll was performed
+    if (auraType) {
         document.getElementById("auraText").innerHTML = auraType;
-        saveState(); // Save the state after selecting an aura
+        saveState();
     }
 }
 
-// Call loadState() to load the saved state when the page loads
 window.onload = function() {
     loadState();
 };
+
+//End Functions
